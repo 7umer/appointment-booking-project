@@ -1,74 +1,93 @@
-<!-- Appointment Booking API -->
 
-This project is an Appointment Booking Web Application built using Django Rest Framework. It provides APIs for users, appointments, authentication, and integrates with a WordPress frontend form.
+# Appointment Booking Project (Django + Admin Dashboard + WordPress)
 
-<!-- Getting Started  -->
+This project is an Appointment Booking Web Application built using Django Rest Framework.
+It provides APIs for appointment booking, JWT authentication, and includes a separate
+HTML/CSS/JS Admin Dashboard. A WordPress frontend form is used for user booking.
 
-Follow these steps to run the project on your local machine:
+---
 
-<!-- Technologies -->
+## Technologies Used
 
-Python
+- Python
+- Django
+- Django Rest Framework
+- SQLite (default database)
+- HTML, CSS, JavaScript (Admin Dashboard)
+- WordPress (Frontend booking form)
+- JWT Authentication
 
-Django
+---
 
-Django Rest Framework
+## Project Structure
 
-SQLite (default) — PostgreSQL optional
+- Admin_Dashboard/ → Frontend admin panel (HTML/JS/CSS)
+- Appointment_Booking_API/ → Django backend
+- WordPress form → Hosted separately (Elementor)
 
-Html, CSS, JavaScript(Admin Dashboard)
+---
 
-WordPress (frontend integration)
+## Installation (Backend)
 
-<!-- ---------------------- Installation -------------------- -->
+## Clone your repository:
 
-<!-- Clone the repository: -->
-
-git clone https://github.com/majidovnurbek/Appointment_Booking_API.git
-cd Appointment_Booking_API
+git clone https://github.com/7umer/appointment-booking-project.git
+cd appointment-booking-project/Appointment_Booking_API
 
 
-<!-- Create a virtual environment (optional): -->
+## Create virtual environment:
 
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+venv\Scripts\activate
 
 
-<!-- Install the required dependencies: -->
+## Install dependencies:
 
 pip install -r requirements.txt
 
 
-<!-- Apply database migrations: -->
+## Run migrations:
 
 python manage.py migrate
 
 
-<!-- Create a superuser (optional): -->
+## Create admin user:
 
 python manage.py createsuperuser
 
 
-<!-- Start the development server: -->
+
+## Start server:
 
 python manage.py runserver
 
 
-<!-- Access the API: -->
+## Access URLs
 
-API root: http://127.0.0.1:8000/api/
+API Root:
+http://127.0.0.1:8000/api/
 
-Admin dashboard: http://127.0.0.1:8000/admin/
+Admin Panel:
+http://127.0.0.1:8000/admin/
 
-Swagger docs: http://127.0.0.1:8000/api/schema/swagger-ui/
+Swagger Docs:
+http://127.0.0.1:8000/api/schema/swagger-ui/
 
-Redoc docs: http://127.0.0.1:8000/api/schema/redoc/
+Redoc Docs:
+http://127.0.0.1:8000/api/schema/redoc/
 
-<!-- Notes -->
+---
 
-Default database is SQLite (db.sqlite3).
+## Notes
 
-WordPress frontend form can submit appointments to /api/appointments/.
+- Default database: SQLite (db.sqlite3)
+- Admin Dashboard uses API endpoints from Django
+- WordPress form sends appointments to:
 
-JWT authentication is enabled for protected routes.
+   /api/appointments/
+
+- JWT authentication protects admin actions
+
+## Author
+
+Umer
