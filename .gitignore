@@ -1,7 +1,8 @@
 venv/
 __pycache__/
 *.pyc
-db.sqlite3
+
+Appointment_Booking_API/db.sqlite3
 media/
 staticfiles/
 .env
