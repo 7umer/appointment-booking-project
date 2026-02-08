@@ -1,0 +1,55 @@
+<form id="bookingForm">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <input type="text" id="phone" placeholder="Phone" required />
+  <input type="email" id="email" placeholder="Email" required />
+  <input type="text" id="service" placeholder="Service (e.g. GYM Training)" required />
+  <input type="date" id="date" required />
+
+  <textarea id="messageInput" placeholder="Your Message (optional)" rows="4"></textarea>
+
+  <button type="submit">Book Appointment</button>
+  <p id="message"></p>
+</form>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const service = document.getElementById("service").value;
+  const dateRaw = document.getElementById("date").value;
+  const messageInput = document.getElementById("messageInput").value;
+
+  const [year, month, day] = dateRaw.split("-");
+  const date = `${day}-${month}-${year}`;
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/appointments/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        service,
+        date,
+        message: messageInput
+      })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      document.getElementById("message").innerText = "✅ Booking Successful!";
+      document.getElementById("bookingForm").reset();
+    } else {
+      document.getElementById("message").innerText = "❌ Error: " + JSON.stringify(result);
+    }
+
+  } catch (err) {
+    document.getElementById("message").innerText = "❌ Network Error: " + err.message;
+  }
+});
+</script>
