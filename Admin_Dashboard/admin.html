@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+
+<h2>Admin – Appointment Bookings</h2>
+
+<label>Status:
+    <select id="statusFilter">
+        <option value="">All</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+    </select>
+</label>
+
+<label>Date:
+    <input type="date" id="dateFilter">
+</label>
+
+<button onclick="loadBookings()">Filter</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="bookingTable"></tbody>
+</table>
+
+<div style="margin-top:20px;text-align:center">
+    <button onclick="loadPrev()">⬅ Previous</button>
+    <button onclick="loadNext()">Next ➡</button>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

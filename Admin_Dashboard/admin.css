@@ -1,0 +1,131 @@
+/* admin-style.css */
+
+/* General body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    padding: 30px;
+    color: #333;
+}
+
+/* Heading */
+h2 {
+    color: #1e2a38;
+    margin-bottom: 20px;
+}
+
+/* Status filter and button */
+label, select, button.filter-btn {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+button.filter-btn {
+    padding: 6px 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+button.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center;
+    min-width: 100px; /* uniform column width */
+}
+
+th {
+    background-color: #1e2a38;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Buttons */
+button.approve, button.reject {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 80px; /* uniform size */
+    margin: 2px;
+    font-weight: bold;
+}
+
+button.approve {
+    background-color: #28a745;
+    color: white;
+}
+
+button.approve:hover {
+    background-color: #218838;
+}
+
+button.reject {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.reject:hover {
+    background-color: #c82333;
+}
+
+/* Status badges */
+span.status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    min-width: 80px;
+    display: inline-block;
+}
+
+span.status.pending {
+    background-color: #ffc107;
+}
+
+span.status.approved {
+    background-color: #28a745;
+}
+
+span.status.rejected {
+    background-color: #dc3545;
+}
+
+
+
+
+
+button {
+    min-width: 90px;
+}
+
+button.delete {
+    background: #6c757d;
+    color: white;
+}
+
+button.delete:hover {
+    background: #5a6268;
+}
