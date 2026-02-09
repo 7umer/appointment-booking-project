@@ -174,22 +174,3 @@ def delete_appointment(request, pk):
 
 
 
-
-
-from django.contrib.auth import get_user_model
-from django.http import JsonResponse
-
-def create_render_admin(request):
-    User = get_user_model()
-
-    user, created = User.objects.get_or_create(
-        email="admin@gmail.com",
-        defaults={"is_staff": True, "is_superuser": True}
-    )
-
-    user.is_staff = True
-    user.is_superuser = True
-    user.set_password("admin123")
-    user.save()
-
-    return JsonResponse({"msg": "Admin reset successfully"})
