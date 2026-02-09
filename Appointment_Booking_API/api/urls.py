@@ -12,7 +12,7 @@ from api.views import (
     delete_appointment,
 )
 
-from .views import create_render_admin
+
 
 
 urlpatterns = [
