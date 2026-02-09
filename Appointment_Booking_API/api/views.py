@@ -171,3 +171,23 @@ def delete_appointment(request, pk):
     appointment = get_object_or_404(Appointment, pk=pk)
     appointment.delete()
     return Response(status=204)
+
+
+
+
+
+from django.contrib.auth import get_user_model
+from django.http import JsonResponse
+
+def create_render_admin(request):
+    User = get_user_model()
+
+    if User.objects.filter(email="admin@gmail.com").exists():
+        return JsonResponse({"msg": "Admin already exists"})
+
+    User.objects.create_superuser(
+        email="admin@gmail.com",
+        password="admin123"
+    )
+
+    return JsonResponse({"msg": "Admin created"})

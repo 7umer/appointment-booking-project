@@ -12,6 +12,9 @@ from api.views import (
     delete_appointment,
 )
 
+from .views import create_render_admin
+
+
 urlpatterns = [
     # --------------------
     # User APIs
@@ -19,6 +22,7 @@ urlpatterns = [
     path('register', RegisterAPIView.as_view(), name='register'),
     path('login', LoginAPIView.as_view(), name='login'),
     path('user/update/<int:pk>', UserUpdateAPIView.as_view(), name='user-update'),
+    path("create-admin/", create_render_admin),
 
     # --------------------
     # Booking / Dates
