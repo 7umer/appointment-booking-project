@@ -182,12 +182,14 @@ from django.http import JsonResponse
 def create_render_admin(request):
     User = get_user_model()
 
-    if User.objects.filter(email="admin@gmail.com").exists():
-        return JsonResponse({"msg": "Admin already exists"})
-
-    User.objects.create_superuser(
+    user, created = User.objects.get_or_create(
         email="admin@gmail.com",
-        password="admin123"
+        defaults={"is_staff": True, "is_superuser": True}
     )
 
-    return JsonResponse({"msg": "Admin created"})
+    user.is_staff = True
+    user.is_superuser = True
+    user.set_password("admin123")
+    user.save()
+
+    return JsonResponse({"msg": "Admin reset successfully"})
