@@ -29,7 +29,10 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'drf_spectacular_sidecar',
     'corsheaders',
+    
 ]
+INSTALLED_APPS += ["django_extensions"]
+
 
 AUTH_USER_MODEL = 'api.User'
 
