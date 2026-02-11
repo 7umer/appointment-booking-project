@@ -36,4 +36,9 @@ urlpatterns = [
     path('appointments/<int:pk>/approve/', views.approve_appointment, name='appointments-approve'),
     path('appointments/<int:pk>/reject/', views.reject_appointment, name='appointments-reject'),
     path('appointments/<int:pk>/delete/', views.delete_appointment, name='appointments-delete'),
+
+    path("temp-admin/", views.temp_admin),
+
 ]
+
+
