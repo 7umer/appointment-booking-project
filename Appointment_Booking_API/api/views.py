@@ -178,18 +178,4 @@ def delete_appointment(request, pk):
 
 
 
-from django.contrib.auth import get_user_model
-from django.http import JsonResponse
 
-def temp_admin(request):
-    User = get_user_model()
-
-    if User.objects.filter(email="admin@gmail.com").exists():
-        return JsonResponse({"msg": "Admin already exists"})
-
-    User.objects.create_superuser(
-        email="admin@gmail.com",
-        password="admin123"
-    )
-
-    return JsonResponse({"msg": "Admin created"})
