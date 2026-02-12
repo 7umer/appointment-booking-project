@@ -80,14 +80,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 # -----------------------
 
 import dj_database_url
-import os
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default="sqlite:///db.sqlite3",
-       
-    )
+    "default": dj_database_url.config(conn_max_age=600)
 }
+
 
 
 
