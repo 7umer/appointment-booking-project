@@ -1,5 +1,5 @@
 // ------------------------------------------------------
-const API_URL = "http://127.0.0.1:8000/api/appointments/";
+const API_URL = "https://appointment-booking-api-2dkv.onrender.com/api/appointments/";
 let loading = false;
 let nextPage = null;
 let prevPage = null;
@@ -11,7 +11,7 @@ async function refreshAccessToken() {
     const refresh = localStorage.getItem("refresh");
     if (!refresh) return null;
 
-    const res = await fetch("http://127.0.0.1:8000/api/token/refresh/", {
+    const res = await fetch("https://appointment-booking-api-2dkv.onrender.com/api/token/refresh/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ refresh })
