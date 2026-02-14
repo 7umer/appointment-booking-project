@@ -1,5 +1,5 @@
 async function login() {
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     const res = await fetch("https://appointment-booking-api-2dkv.onrender.com/api/token/", {
