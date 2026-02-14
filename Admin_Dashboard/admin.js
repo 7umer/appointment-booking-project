@@ -5,7 +5,7 @@ async function login() {
     const res = await fetch("https://appointment-booking-api-2dkv.onrender.com/api/token/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({username, password})
+        body: JSON.stringify({email, password})
     });
 
     if (!res.ok) {
