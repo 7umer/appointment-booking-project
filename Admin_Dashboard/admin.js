@@ -1,3 +1,32 @@
+async function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const res = await fetch("https://appointment-booking-api-2dkv.onrender.com/api/token/", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({username, password})
+    });
+
+    if (!res.ok) {
+        alert("Login failed");
+        return;
+    }
+
+    const data = await res.json();
+
+    localStorage.setItem("access", data.access);
+    localStorage.setItem("refresh", data.refresh);
+
+    alert("Login success");
+    loadBookings();
+}
+
+
+
+
+
+
 // ------------------------------------------------------
 const API_URL = "https://appointment-booking-api-2dkv.onrender.com/api/appointments/";
 let loading = false;

@@ -29,9 +29,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'drf_spectacular_sidecar',
     'corsheaders',
-    
+    'django_extensions',
 ]
-INSTALLED_APPS += ["django_extensions"]
 
 
 AUTH_USER_MODEL = 'api.User'
@@ -49,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+MIDDLEWARE.insert(0, "corsheaders.middleware.CorsMiddleware")
 CORS_ALLOW_ALL_ORIGINS = True
 
 # -----------------------
@@ -138,7 +137,7 @@ SIMPLE_JWT = {
 # INTERNATIONALIZATION
 # -----------------------
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Asia/Tashkent'
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
